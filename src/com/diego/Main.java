@@ -6,18 +6,15 @@ public class Main {
 
 
     public static void main(String[] args) {
-	    System.out.println("==> Welcome to Word Counter, this program is design to count how many times each word appears in a file.\n" +
-                "==> Write 'EXIT' to close Word Counter");
-        Scanner input = new Scanner(System.in);
-        Counter fwc = new FileWordCounter();
-        boolean exit = false;
-        while(!exit){
-            System.out.print("==> File path: ");
-            String path = input.nextLine();
-            exit = path.equalsIgnoreCase("EXIT");
-            if(!exit){
-                fwc.count(path);
-            }
+
+        if(args.length==1){
+            Counter fwc = new FileWordCounter();
+            fwc.count(args[0]);
+        }else{
+            System.out.println("Incorrect argument number.\nWord Counter is a command-line application that takes a " +
+                    "path to a file as an argument and prints a word count of its contents.");
         }
+
+
     }
 }
