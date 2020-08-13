@@ -8,8 +8,12 @@ import java.util.stream.Stream;
 
 public class FileWordCounter implements Counter{
 
-    //Regular expresion used to determine the end of a word
-    private String ENDWORD_REGEX = "[ .,;:\"'\n¡!¿?\t]+";
+    //ENDWORD_REGEX: Regular expression used to determine the end of a word
+    //Punctuation symbols such as a period or comma are not considered words, but numbers are
+    //@,#,-,< and > are used to determine the end of a word, so complex expressions like emails are not considered a
+    //single word, but a union of words ( foo@bar.com -> foo : 1, bar : 1, com : 1 )
+    //_ is considered part of a word so expressions like foo_bar or _ will be count as one word
+    private String ENDWORD_REGEX = "[ .,;:\"'\n¡!¿?\t*@#+-=()\\]\\[{}<,>]+";
 
     /**
      * This method creates a BufferedReader from a file(source), splits the content of this file in words

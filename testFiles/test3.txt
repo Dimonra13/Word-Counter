@@ -1,0 +1,17 @@
+foo,
+
+foo bar "foo". bar,bar, foo: bar bar foo foo bar.
+'foo foo bar bar bar', foo y foo; foo [bar] foo.
+
+'{foo}:;    foo bar bar bar',', foo@# y foo; foo bar foo:
+ - foo_bar, bar_foo.
+ - foo-bar, [bar-foo].
+ - {(foo_bar) , (bar_foo)}.
+ - 3 + 2 = 5
+ - (3+2)=5
+
+
+foo,                                                                        
+bar@bar.foo
+
+
